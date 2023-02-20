@@ -101,7 +101,6 @@ class FormationController extends Controller
             // $formation->update();
             // }
 
-
             return view('listeformation',compact('formation','referenciel'));
         }
 

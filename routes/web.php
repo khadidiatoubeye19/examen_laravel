@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+ Auth::routes();
 Route::get('/', function () {
-    return view('home');
+    return view('auth/login');
 });
 
 // Route::get('/register', [App\Http\Controllers\HomeController::class, 'vu'])->name('register');
@@ -37,3 +38,7 @@ Route::post('/supprimertype',  [TypeController::class, 'destroy']);
 Route::post('/supprimercan',  [CandidatController::class, 'destroy']);
 Route::post('/supprimerforma',  [FormationController::class, 'destroy']);
 Route::post('/supprimerref',  [ReferencielController::class, 'destroy']);
+
+
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
