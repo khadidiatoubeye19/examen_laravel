@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function deconexion()
+    {
+        auth()->logout();
+
+        return redirect('/login');
+    }
+
 }

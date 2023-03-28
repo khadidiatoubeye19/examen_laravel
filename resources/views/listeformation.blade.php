@@ -26,7 +26,7 @@
                                     <th>Name</th>
                                     <th>Description</th>
                                     <th>Date de debut</th>
-                                    <th>Referenciel</th>
+                                    <th>Referentiel</th>
                                     <th>Actions</th>
 
 
@@ -45,7 +45,7 @@
             <td>{{$m->nom}}</td>
             <td>{{$m->description}}</td>
             <td>{{$m->date_debut}}</td>
-            {{-- <td>{{$formation->referenciel->libelle}}</td> --}}
+            {{-- <td>{{$m->referenciel->libelle}}</td> --}}
             @foreach ( $referenciel as $ref )
             @if($ref->id==$m->Referenciel_id)
             <td>{{$ref->libelle}}</td>

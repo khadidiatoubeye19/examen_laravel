@@ -90,17 +90,17 @@ class FormationController extends Controller
             return redirect('liste')
                     ->with('message', 'enregistrement avec Succee!');
         }
-
         public function liste(){
-            // $formation=formation::all();
-            $formation= Formation::with('referenciel')->get();
+            // $formation=Formation::all();
+            $formation=Formation::with('referenciel')->get();
             $referenciel=Referenciel::all();
             // $formation = formation::all();
             // if($formation->date_debut >date( "Y-m-d")){
             //     $formation->isStarted==0;
             // $formation->update();
             // }
-
+            // foreach ($formation as $m){
+            // dd($formation);
             return view('listeformation',compact('formation','referenciel'));
         }
 
@@ -122,4 +122,5 @@ public function update()
     }
 
   }
+  
 }

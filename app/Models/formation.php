@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class formation extends Model
+class Formation extends Model
 {
     use HasFactory;
     public function referenciel()
     {
         return $this->belongsTo(Referenciel::class);
+
     }
 }

@@ -10,6 +10,6 @@ class Referenciel extends Model
     use HasFactory;
     public function formation()
     {
-        return $this->belongsTo(formation::class);
+        return $this->hasMany(Formation::class);
     }
 }

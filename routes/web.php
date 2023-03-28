@@ -38,6 +38,7 @@ Route::post('/supprimertype',  [TypeController::class, 'destroy']);
 Route::post('/supprimercan',  [CandidatController::class, 'destroy']);
 Route::post('/supprimerforma',  [FormationController::class, 'destroy']);
 Route::post('/supprimerref',  [ReferencielController::class, 'destroy']);
+Route::get('/deconnexion',  [HomeController::class, 'deconexion']);
 
 
 
