@@ -1,5 +1,5 @@
 
-<html lang="en">
+{{-- <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,18 +9,20 @@
         <title>Dashboard - SB Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script> --}}
+        <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
 
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 	<link href="../css/default/app.min.css" rel="stylesheet" />
 	<!-- ================== END BASE CSS STYLE ================== -->
-    </head>
+    {{-- </head> --}}
 
     <body>
-
-    <main>
         @include('welcome')
+    <main>
+
+
         <!-- end breadcrumb -->
 			<!-- begin page-header -->
 			<h1 class="page-header">Dashboard <small>Tableau de bord recapitulatif des formations</small></h1>

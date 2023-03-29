@@ -27,23 +27,25 @@ class CandidatController extends Controller
         }
         public function liste(){
           $formation= Formation::all();
-          $candidat= Candidat::all();
-        //   $candida= Candidat::all();
-          $candidatformation=candidat_formation::all();
+        //   $candidat= Candidat::all();
+          $candidats = Candidat::with('formations')->get();
+        //   $candidatformation=candidat_formation::all();
 
-          return view('listecandidat',compact('candidat','formation','candidatformation'));
+          return view('listecandidat',compact('formation','candidats'));
     }
     public function listechoix(){
         $formation= Formation::all();
-        return view('choixformation',compact('formation'));
+        $candidats = Candidat::with('formations')->get();
+
+        return view('choixformation',compact('formation','candidats'));
   }
   public function choixcandidat(Request $request){
 
+    $candidat = Candidat::find($request->input('Candidat_id'));
+    $formation = Formation::find($request->input('Formation_id'));
 
-    $choixform= new candidat_formation;
-    $choixform->Formation_id=$request->Formation_id;
-    $choixform->Candidat_id=$request->Candidat_id;
-    $choixform->save();
+    $candidat->formations()->attach($formation->id);
+   
     return redirect('listecandidat');
 
   }

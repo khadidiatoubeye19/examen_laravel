@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Candidat extends Model
 {
     use HasFactory;
-    public function formation()
+    public function formations()
     {
-        return $this->belongsToMany(formation::class);
+        return $this->belongsToMany(Formation::class, 'candidat_formation');
     }
 }

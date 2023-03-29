@@ -13,4 +13,8 @@ class Formation extends Model
         return $this->belongsTo(Referenciel::class);
 
     }
+    public function candidats()
+    {
+        return $this->belongsToMany(Candidat::class, 'candidat_formation');
+    }
 }

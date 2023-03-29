@@ -45,34 +45,36 @@
     </thead>
     <tbody >
         <tr>
-        @foreach ($candidat as $m)
+            @foreach ($candidats as $candidat)
+         {{-- @foreach ($candidat as$candidat) --}}
             <td>
                 <span class="custom-checkbox">
                     <input type="checkbox" id="checkbox1" name="options[]" value="1">
                     <label for="checkbox1"></label>
                 </span>
             </td>
-            <td>{{$m->id}}</td>
-            <td>{{$m->nom}}</td>
-            <td>{{$m->prenom}}</td>
-            <td>{{$m->age}}</td>
-            <td>{{$m->niveauEtude}}</td>
-            <td>{{$m->sexe}}</td>
+            <td>{{$candidat->id}}</td>
+            <td>{{$candidat->nom}}</td>
+            <td>{{$candidat->prenom}}</td>
+            <td>{{$candidat->age}}</td>
+            <td>{{$candidat->niveauEtude}}</td>
+            <td>{{$candidat->sexe}}</td>
 
 
             <td> @include('modal.choixformation')</td>
 
             <td>
+               
 
-    <input type="hidden" value="{{$m->id}}" name="idcan">
+    <input type="hidden" value="{{$candidat->id}}" name="idcan">
 
-    <a href="#" class="btn btn-danger" class="choixformation" data-toggle="modal" data-target="#choix{{$m->id}}">choisir formation</a>
+    <a href="#" class="btn btn-danger" class="choixformation" data-toggle="modal" data-target="#choix{{$candidat->id}}">choisir formation</a>
 
 
                 <form action="/supprimercan"method="POST">
             @csrf
 
-           <input type="hidden" value="{{ $m->id }}" name="idcan">
+           <input type="hidden" value="{{$candidat->id }}" name="idcan">
            <td>
                 <button  name="delete"class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
             </td></td>
